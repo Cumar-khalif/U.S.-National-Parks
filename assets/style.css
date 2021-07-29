@@ -21,3 +21,25 @@
     opacity: 50%;
 }
 
+body{
+    font-family: 'Merienda', cursive;
+}
+
+#contributors {
+    display: flex;
+    color: #fefefe;
+
+    }
+
+footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+.hero-section .hero-section-text {
+        /* margin-top: 22.5em; */
+        margin-top: 40vh;
+        color: #fefefe;
+        text-shadow: 1px 1px 2px #0a0a0a;
+    }
+
