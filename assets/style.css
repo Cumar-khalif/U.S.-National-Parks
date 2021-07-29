@@ -1,0 +1,25 @@
+* {
+ border: 2px solid white;
+}
+
+.blue div {
+    background-color: blue;
+    color: white;
+    font-weight: 200;
+}
+.hide {
+    display: none;
+}
+
+.mainImg {
+  background-image: url("./img/background.jpg" );
+  background-repeat: no-repeat;
+}
+
+.black {
+    background-color: black;
+    opacity: 50%;
+    color: white;
+}
+
+
