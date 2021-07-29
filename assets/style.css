@@ -1,22 +1,16 @@
-* {
- border: 2px solid black;
-}
 
-.blue div {
-    background-color: blue;
-    color: white;
-    font-weight: 200;
-}
-.hide {
-    display: none;
-}
+/* * {
+ border: 2px solid black;
+} */
 
 .mainImg {
   background-image: url("./img/background.jpg" );
   background-repeat: no-repeat;
 }
-
-.black {
+.background {
+    background-color: #2d3e50
+}
+.title {
     background-color: black;
     opacity: 50%;
 }
