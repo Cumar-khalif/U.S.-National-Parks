@@ -5,108 +5,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/style.css">
+    
     <!-- linking google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>National Park Searcher</title>
 
 </head>
 
-<body>
+<body class="bg-blue-100">
   <header class="mainImg bg-cover h-96 center">
-    <h1 class="text-yellow-400  flex justify-center text-9xl black">
+    <h1 class="text-yellow-400  flex justify-center text-9xl title">
       National Parks
   </h1>
   </header>
- 
-  <button class="bg-yellow-400 justify-center">Click here to start your Search</button>
-  <br>
-  <button class="bg-yellow-400 justify-center"><a href="./favorite.html">See your favorites</a></button>
-  
-  <article>
-  <label for="number">Select a State</label>
-    <select name="number" id="number">
-      <option selected="selected">Choose</option>
-      <option>Alabama</option>
-      <option>Alaska</option>
-      <option>Arizona</option>
-      <option>Arkaansas</option>
-      <option>California</option>
-      <option>Colorado</option>
-      <option>Connecticut</option>
-      <option>Delaware</option>
-      <option>Florida</option>
-      <option>Gorgia</option>
-      <option>Hawaii</option>
-      <option>Idaho</option>
-      <option>Illinois</option>
-      <option>Indiana</option>
-      <option>Iowa</option>
-      <option>Kansas</option>
-      <option>Kentucky</option>
-      <option>Louisiana</option>
-      <option>Maine</option>
-      <option>Maryland</option>
-      <option>Massachusetts</option>
-      <option>Michigan</option>
-      <option>Minnesota</option>
-      <option>Mississippi</option>
-      <option>Missouri</option>
-      <option>Montana</option>
-      <option>Nebraska</option>
-      <option>Nevada</option>
-      <option>New Hampshire</option>
-      <option>New Jersey</option>
-      <option>New Mexico</option>
-      <option>New York</option>
-      <option>North Carolina</option>
-      <option>North Dakota</option>
-      <option>Ohio</option>
-      <option>Oklahoma</option>
-      <option>Oregon</option>
-      <option>Pennsylvania</option>
-      <option>Rhode Island</option>
-      <option>South Carolina</option>
-      <option>South Dakota</option>
-      <option>Tennessee</option>
-      <option>Texas</option>
-      <option>Utah</option>
-      <option>Vermont</option>
-      <option>Virginia</option>
-      <option>Washington</option>
-      <option>West Virginia</option>
-      <option>Wisconsin</option>
-      <option>Wyoming</option>
-    </select>
 
+  
+  <article class="my-2" >
+   <form class="flex justify-center text-2xl"> 
+  <label for="state">Select a State</label>
+    <select name="state" id="state" class="border-2 border-black mx-2 mb-2">
+      <option selected="selected">Choose</option>
+      <option value="Alabama">Alabama</option>
+      <option value="Alaska">Alaska</option>
+      <option value="Arizona">Arizona</option>
+      <option value="Arkaansas">Arkaansas</option>
+      <option value="California">California</option>
+      <option value="Colorado">Colorado</option>
+      <option value="Connecticut">Connecticut</option>
+      <option value="Delaware">Delaware</option>
+      <option value="Florida">Florida</option>
+      <option value="Gorgia">Gorgia</option>
+      <option value="Hawaii">Hawaii</option>
+      <option value="Idaho">Idaho</option>
+      <option value="Illinois">Illinois</option>
+      <option value="Indiana">Indiana</option>
+      <option value="Iowa">Iowa</option>
+      <option value="Kansas">Kansas</option>
+      <option value="Kentucky">Kentucky</option>
+      <option value="Louisiana">Louisiana</option>
+      <option value="Maine">Maine</option>
+      <option value="Maryland">Maryland</option>
+      <option value="Massachusetts">Massachusetts</option>
+      <option value="Michigan">Michigan</option>
+      <option value="Minnesota">Minnesota</option>
+      <option value="Mississippi">Mississippi</option>
+      <option value="Missouri">Missouri</option>
+      <option value="Montana">Montana</option>
+      <option value="Nebraska">Nebraska</option>
+      <option value="Nevada">Nevada</option>
+      <option value="New_Hampshire">New Hampshire</option>
+      <option value="New_Jersey">New Jersey</option>
+      <option value="New_Mexico">New Mexico</option>
+      <option value="New_York">New York</option>
+      <option value="North_Carolina">North Carolina</option>
+      <option value="North_Dakota">North Dakota</option>
+      <option value="Ohio">Ohio</option>
+      <option value="Oklahoma">Oklahoma</option>
+      <option value="Oregon">Oregon</option>
+      <option value="Pennsylvania">Pennsylvania</option>
+      <option value="Rhode_Island">Rhode Island</option>
+      <option value="South_Carolina">South Carolina</option>
+      <option value="South_Dakota">South Dakota</option>
+      <option value="Tennessee">Tennessee</option>
+      <option value="Texas">Texas</option>
+      <option value="Utah">Utah</option>
+      <option value="Vermont">Vermont</option>
+      <option value="Virginia">Virginia</option>
+      <option value="Washington">Washington</option>
+      <option value="West_Virginia">West Virginia</option>
+      <option value="Wisconsin">Wisconsin</option>
+      <option value="Wyoming">Wyoming</option>
+    </select>
+    <label for="state">
+    <a href="pages\search-results.html"><input name="state" type="submit" id="submit"></a>
+    </label>
+  </form> 
+  <div class="flex justify-center">
+  <button class="h-16 w-1/3 text-4xl bg-yellow-400 text-white border-2 border-black">
+    <a href="./pages/favorite.html">
+      See your favorites
+    </a>
+  </button>
+</div>
+</article>
 
     <!-- footer idea -->
     <!-- every contributors has there on box and image and name. when you click on the thumbnail you will be taken to there github page. -->
-    <footer>
+    <footer class="flex justify-center border border-black title p-1">
       <div class="grid-x grid-padding-x" id="contributors">
-        <div class="cell small-6 medium-3">
-          <a href="https://github.com/daveshouse44" target="_blank"><img src="attach your own image"
-              alt="David Tierney" class="thumbnail"></a>
+        <div class="cell small-6 medium-3 mx-5">
+          <!-- <a href="https://github.com/daveshouse44" target="_blank"><img src="attach your own image"
+              alt="David Tierney" class="thumbnail"></a> -->
           <a class="thumbnail" href="https://github.com/daveshouse44" target="_blank">David Tierney</a>
         </div>
 
-        <div class="cell small-6 medium-3">
-          <a href="https://github.com/pepsi1397" target="_blank"><img src="attach your own image"
-              alt="Jose Avalos" class="thumbnail"></a>
+        <div class="cell small-6 medium-3 mx-5">
+          <!-- <a href="https://github.com/pepsi1397" target="_blank"><img src="attach your own image"
+              alt="Jose Avalos" class="thumbnail"></a> -->
           <a class="thumbnail" href="https://github.com/pepsi1397" target="_blank">Jose Avalos</a>
         </div>
 
-        <div class="cell small-6 medium-3">
-          <a href="https://github.com/Cumar-khalif" target="_blank"><img src="attach your own image" alt="Omar Abdirahman k."
-              class="thumbnail"></a>
-          <a class="name-link game-link" href="https://github.com/Cumar-khalif" target="_blank">Omar Abdirahman k.</a>
+        <div class="cell small-6 medium-3 mx-5">
+          <!-- <a href="https://github.com/Cumar-khalif" target="_blank"><img src="attach your own image" alt="Omar Abdirahman k."
+              class="thumbnail"></a> -->
+          <a class="name-link game-link" href="https://github.com/Cumar-khalif" target="_blank">Omar Abdirahman k.</a> 
         </div>
 
-        <div class="cell small-6 medium-3">
-          <a href="https://github.com/pcyang57" target="_blank"><img src="attach your own image"
-              alt="Phillip Yang" class="thumbnail"></a>
+        <div class="cell small-6 medium-3 mx-5">
+          <!-- <a href="https://github.com/pcyang57" target="_blank"><img src="attach your own image"
+              alt="Phillip Yang" class="thumbnail"></a> -->
           <a class="name-link game-link" href="https://github.com/pcyang57" target="_blank">Phillip Yang</a>
         </div>
     </footer>
@@ -117,7 +127,7 @@
           &copy; 2021 United States National Parks, .
       </p>
   </footer> -->
-  </article>
+  
      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assets/script.js"></script>
