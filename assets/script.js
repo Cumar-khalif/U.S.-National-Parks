@@ -16,4 +16,4 @@ function getParks(){
 .then(response => response.json())
 .then (data => console.log(data));
 
-})
+}
