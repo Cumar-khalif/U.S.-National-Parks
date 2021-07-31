@@ -39,8 +39,6 @@ footer {
         text-shadow: 1px 1px 2px #0a0a0a;
     }
 
-
-
 * {
   box-sizing: border-box;
 }
@@ -64,37 +62,28 @@ p {
   font-size: 1.2rem;
 }
 
- .btn {
+.btn {
   font-size: 1.3rem;
-  text-decoration:none;
   padding: 6px 5px;
   width: 100%;
   display: block;
   margin: 5px 0;
   border-radius: var(--border-radius);
   color: var(--primary);
-  border: none;
-  outline: none;
   background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--dark);
-  transform: translate(-1px, -1px);
+
 }
 .btn-favorites {
 font-size: 1.3rem;
-  text-decoration:none;
   padding: 6px 5px;
   width: 90%;
   display: block;
-  margin: 0px 20px 10px 20px;
+  margin: 0px 25px 10px 25px;
   border-radius: var(--border-radius);
   color: var(--primary);
-  border: none;
-  outline: none;
   background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--dark);
-  transform: translate(-1px, -1px);
 }
- .btn:hover {
+.btn:hover {
   color: var(--primary);
   background-color: var(--tertiary);
   transform: translate(0, 0);
@@ -108,10 +97,7 @@ font-size: 1.3rem;
 .btn-back {
   border-radius: var(--border-radius);
   color: var(--primary);
-  border: none;
-  outline: none;
   background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--secondary);
   transform: translate(-1px, -1px);
   display: inline-block;
   width: auto;
@@ -126,26 +112,6 @@ font-size: 1.3rem;
   background-color: var(--tertiary);
   transform: translate(0, 0);
   box-shadow: 2px 2px var(--dark);
-}
-
-.hero {
-  padding: 3% 4%;
-  background-color: var(--dark);
-  color: var(--primary);
-}
-
-.hero p {
-  max-width: 75%;
-}
-
-.app-title {
-  font-size: 3rem;
-  background-color: var(--primary);
-  color: var(--dark);
-  padding: 0 10px;
-  display: inline-block;
-  border-radius: var(--border-radius);
-  box-shadow: 6px 5px var(--light-dark);
 }
 
 .list-group {
@@ -220,20 +186,6 @@ font-size: 1.3rem;
   border-radius: var(--border-radius);
 }
 
-/* HEIGHT / WIDTH UTILS */
-.min-100-vh {
-  min-height: 100vh;
-}
-
-.min-100-vw {
-  min-width: 100vw;
-}
-
-/* FONT UTILS */
-.text-uppercase {
-  text-transform: uppercase;
-}
-
 
 /* FLEX CONTENT */
 .flex {
@@ -279,7 +231,7 @@ font-size: 1.3rem;
   align-items: center;
 }
 
-.col-auto {
+/* .col-auto {
   flex-grow: 1;
 }
 
@@ -329,7 +281,7 @@ font-size: 1.3rem;
 
 .col-12 {
   flex: 0 0 100%;
-}
+} */
 
 /* col-sm */
 @media screen and (min-width: 640px) {
@@ -381,7 +333,6 @@ font-size: 1.3rem;
     flex: 0 0 100%;
   }
 }
-
 
 /* col-md */
 @media screen and (min-width: 768px) {
