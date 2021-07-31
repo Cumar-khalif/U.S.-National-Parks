@@ -1,4 +1,4 @@
-$(".btn").on("click", function (event) {
+$("#submit").on("click", function (event) {
     event.preventDefault();
 
     var stateSel = $("#state").val()
@@ -8,4 +8,5 @@ $(".btn").on("click", function (event) {
     fetch (getApiUrl)
 .then(response => response.json())
 .then (data => console.log(data));
+
 })
