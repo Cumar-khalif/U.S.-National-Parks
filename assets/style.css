@@ -32,12 +32,7 @@ footer {
         bottom: 0;
         width: 100%;
     }
-.hero-section .hero-section-text {
-        /* margin-top: 22.5em; */
-        margin-top: 40vh;
-        color: #fefefe;
-        text-shadow: 1px 1px 2px #0a0a0a;
-    }
+
 
 * {
   box-sizing: border-box;
@@ -101,7 +96,7 @@ font-size: 1.3rem;
   transform: translate(-1px, -1px);
   display: inline-block;
   width: auto;
-  margin-top: 20px;
+  margin-left: 20px;
   padding: 15px;
   text-decoration: none;
   font-size: 1.2rem;
