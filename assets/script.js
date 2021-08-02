@@ -5,12 +5,13 @@ $("#submit").on("click", function (event) {
     getParks();
 })
 
+// Pulls 
 function getParks() {
 
     var stateSel = $("#state").val();
     var getApiUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${stateSel}&api_key=bXu3Ai3Odu0e1HKfSDrMMWwCGmh9e2AEvwa80Dx6`;
 
-    console.log(getApiUrl)
+    // console.log(getApiUrl)
     fetch(getApiUrl)
         .then(response => response.json())
         .then(data => {
