@@ -22,13 +22,9 @@
     opacity: 50%;
 }
 
-.contributors {
-    display: flex;
-    color: #fefefe;
-    }
 
 footer {
-        position: absolute;
+        position: relative;
         bottom: 0;
         width: 100%;
     }
@@ -36,6 +32,20 @@ footer {
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  color:blue;
+}
+
+.btn a{
+  color: var(--primary)
+
+}
+
+footer a {
+  color: var(--primary)
+
 }
 
 body {
@@ -109,24 +119,6 @@ font-size: 1.3rem;
   box-shadow: 2px 2px var(--dark);
 }
 
-.list-group {
-  padding: 0;
-  list-style: none;
-}
-
-.list-item {
-  margin-bottom: 10px;
-  padding: 1.5%;
-  border-radius: var(--border-radius);
-  background-color: var(--light-dark);
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.list-item:hover {
-  background-color: var(--dark);
-}
-
 .status-icon {
   padding: 2px 5px;
   margin: 0 5px;
@@ -134,13 +126,27 @@ font-size: 1.3rem;
   border-radius: var(--border-radius);
 }
 
-.icon-danger {
-  color: rgb(255, 70, 70);
+/* SEARCH */
+.search {
+  margin: 0 0 20px 0;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
 }
 
-.icon-success {
-  color: rgb(29, 153, 255);
+.search-header {
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 2.5%;
+  border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
 }
+
+.search-body {
+  padding: 2.5%;
+}
+
+
+
+
 
 /* CARDS */
 .card {

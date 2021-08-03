@@ -4,13 +4,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   
     <!-- linking google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/style.css">
     <title>National Park Searcher</title>
   
   </head>
@@ -24,9 +25,9 @@
   <main class="flex justify-space-between">
     <div class="col-12 col-md-4">
 
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search By State</h3>
-        <form id="user-form" class="card-body">
+      <div class="search">
+        <h3 class="search-header text-uppercase">Search By State</h3>
+        <form id="user-form" class="search-body">
           <label class="form-label" for="state">States</label>
           <select name="state" id="state" autofocus="true" class="form-input">
             <option value="error" selected="selected">Choose</option>
@@ -87,41 +88,33 @@
       </div>
     </div>
     <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing available parks <span id="repo-search-term"></span></h2>
-      <div id="repos-container" class="list-group">
+      <h2>Showing available parks</h2>
+      <div id="park-container" class="list-group">
 
-        <!-- <div class="card">
-          <h3 class="card-header text-uppercase">Hello</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur recusandae laudantium impedit nulla vitae ullam asperiores nisi sed totam debitis officiis error quasi, amet praesentium cum doloremque. Totam, alias sit!</p>
-          </div> -->
+        
 
       </div>
     </div>
   </main>
-
   <footer class="border border-black title p-1">
-    <div class="flex justify-center grid-x grid-padding-x contributors" id="contributors">
+    <div class="flex justify-center grid-x grid-padding-x" id="contributors">
       <div class="cell small-6 medium-3 mx-5">
-        <!-- <a href="https://github.com/daveshouse44" target="_blank"><img src="attach your own image"
-              alt="David Tierney" class="thumbnail"></a> -->
+        
         <a class="thumbnail" href="https://github.com/daveshouse44" target="_blank">David Tierney</a>
       </div>
 
       <div class="cell small-6 medium-3 mx-5">
-        <!-- <a href="https://github.com/pepsi1397" target="_blank"><img src="attach your own image"
-              alt="Jose Avalos" class="thumbnail"></a> -->
+        
         <a class="thumbnail" href="https://github.com/pepsi1397" target="_blank">Jose Avalos</a>
       </div>
 
       <div class="cell small-6 medium-3 mx-5">
-        <!-- <a href="https://github.com/Cumar-khalif" target="_blank"><img src="attach your own image" alt="Omar Abdirahman k."
-              class="thumbnail"></a> -->
+        
         <a class="name-link game-link" href="https://github.com/Cumar-khalif" target="_blank">Omar Abdirahman k.</a>
       </div>
 
       <div class="cell small-6 medium-3 mx-5">
-        <!-- <a href="https://github.com/pcyang57" target="_blank"><img src="attach your own image"
-              alt="Phillip Yang" class="thumbnail"></a> -->
+        
         <a class="name-link game-link" href="https://github.com/pcyang57" target="_blank">Phillip Yang</a>
       </div>
     </div>
