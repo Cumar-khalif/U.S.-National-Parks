@@ -1,10 +1,3 @@
-// get the selected state based from URL parameter
-// e.g. /pages/search-results.html?state=ct
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
-// const stateSel = urlParams.get('state');
-
-
 
 // get data for the selected state (stateSel)
 function getParks (stateSel) {
@@ -20,33 +13,30 @@ function getParks (stateSel) {
 
         // this where you do another fetch call to weather api
         
-        ////////////////////////////// render the park cards
+        // render the park cards
         // loop through each park
         for (let i = 0; i < parks.length; i++) {
             // for each park, render a card
             renderParkCard(parks[i]);
         }
-        
     
     });
 }
 
+//adds parks to the page
 function renderParkCard (parkData) {
-    /*
-        <div class="card">
-          <h3 class="card-header text-uppercase">Hello</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur recusandae laudantium impedit nulla vitae ullam asperiores nisi sed totam debitis officiis error quasi, amet praesentium cum doloremque. Totam, alias sit!</p>
-          <a href="url for the park website"> Learn more </a>
-          <img src=""/>
-        </div>
-    */
+
 
     const cardDiv = $('<div>');
     cardDiv.addClass('card');
 
-    const cardH3 = $('<h3>');
-    cardH3.addClass("card-header text-uppercase");
+    const cardH3 = $('<h2>');
+    cardH3.addClass("card-header text-uppercase text-3xl");
     cardH3.text(parkData.fullName);
+    
+    var favbtn = $('<button>');
+    favbtn.addClass("btn");
+    favbtn.text("Save");
 
     const cardP = $('<p>');
     cardP.text(parkData.description);
@@ -62,22 +52,20 @@ function renderParkCard (parkData) {
     cardDiv.append(cardP);
     cardDiv.append(cardA);
     cardDiv.append(cardImg);
-
-    $('#repos-container').append(cardDiv);
-
+    cardDiv.append(favbtn);
+    $('#park-container').append(cardDiv);
 
 }
 
-// getParks();
-
-
-
+// on submit call for parks and weather api
 $("#submit").on("click", function (event) {
     event.preventDefault();
     var stateSel = $("#state").val();
 
     getParks(stateSel);
     getCoordinates(stateSel);
+    
+
 })
 
 
