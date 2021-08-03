@@ -127,6 +127,3 @@ function renderWeatherCard (temp, desc) {
 
 }
 
-$(document).on("click",".save", function() {
-    console.log("clicked")
-})

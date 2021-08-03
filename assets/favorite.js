@@ -1,4 +1,4 @@
-function saveFavorites() {
+function getFavApi() {
    
     var parkCode = "voya";
     var getApiPark = `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=bXu3Ai3Odu0e1HKfSDrMMWwCGmh9e2AEvwa80Dx6`;
@@ -9,8 +9,19 @@ function saveFavorites() {
         console.log(data);
         }
 )};
-saveFavorites()
+getFavApi()
 
 $(document).on("click",".save", function(){
-    console.log("button clicked");
+    var favPark = [];
+    console.log(favPark);
+    $('#park-container')
+        .find(this, "h2")
+        .each(function() {
+            var $li = $(this);
+            favPark.push($li.text());
+        });
+        favorites = JSON.parse(localStorage.getItem("favP")) || [];
+        favorites.push(favPark);
+        localStorage.setItem("favP", JSON.stringify(favorites));
+    
 })
