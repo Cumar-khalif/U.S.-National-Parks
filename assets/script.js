@@ -1,4 +1,5 @@
 
+
 // get data for the selected state (stateSel)
 function getParks (stateSel) {
     
@@ -26,31 +27,37 @@ function getParks (stateSel) {
 //adds parks to the page
 function renderParkCard (parkData) {
 
-    const cardDiv = $('<div>');
-    cardDiv.addClass('card');
 
     const cardH3 = $('<h2>');
+    var favbtn = $('<button>');
+    const cardP = $('<p>');
+    const cardDiv = $('<div>');
+    const cardA = $('<a>');
+    const cardImg = $('<img>');
+    // Working on div
+    cardDiv.addClass('card');
+
+    //working on header
     cardH3.addClass("card-header text-uppercase text-3xl");
     cardH3.text(parkData.fullName);
     
-    var favbtn = $('<button>');
+    //working on button
     favbtn.addClass("btn");
     favbtn.text("Save");
-
-    const cardP = $('<p>');
+    
+    // adding description of park
     cardP.text(parkData.description);
-
-    const cardA = $('<a>');
+    
+    //card
     cardA.attr('href', parkData.url )
     cardA.text('Learn More..')
 
-    const cardImg = $('<img>');
     cardImg.attr('src', parkData.images[0].url);
 
     cardDiv.append(cardH3);
+    cardDiv.append(cardImg);
     cardDiv.append(cardP);
     cardDiv.append(cardA);
-    cardDiv.append(cardImg);
     cardDiv.append(favbtn);
     $('#park-container').append(cardDiv);
 
@@ -60,7 +67,7 @@ function renderParkCard (parkData) {
 $("#submit").on("click", function (event) {
     event.preventDefault();
     var stateSel = $("#state").val();
-
+    $("#park-container").empty();
     getParks(stateSel);
     getCoordinates(stateSel);
     
