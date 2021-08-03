@@ -119,13 +119,6 @@ font-size: 1.3rem;
   box-shadow: 2px 2px var(--dark);
 }
 
-.status-icon {
-  padding: 2px 5px;
-  margin: 0 5px;
-  background-color: rgba(255,255,255, 1);
-  border-radius: var(--border-radius);
-}
-
 /* SEARCH */
 .search {
   margin: 0 0 20px 0;
@@ -143,9 +136,6 @@ font-size: 1.3rem;
 .search-body {
   padding: 2.5%;
 }
-
-
-
 
 
 /* CARDS */
@@ -187,6 +177,13 @@ font-size: 1.3rem;
   border-radius: var(--border-radius);
 }
 
+.img {
+  width: 35%;
+  height:auto;
+  position:relative;
+  border: 2px solid black;
+  margin: 2px;
+}
 
 /* FLEX CONTENT */
 .flex-column {
