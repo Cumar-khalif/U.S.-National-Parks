@@ -23,8 +23,8 @@
         <h3 class="card-header text-uppercase">Search By State</h3>
         <form id="user-form" class="card-body">
           <label class="form-label" for="state">States</label>
-          <select name="state" id="state" autofocus="true" class="form-input">
-            <option value="error" selected="selected">Choose</option>
+          <select name="state" id="username" autofocus="true" class="form-input">
+            <option selected="selected">Choose</option>
             <option value="al">Alabama</option>
             <option value="ak">Alaska</option>
             <option value="az">Arizona</option>
@@ -76,14 +76,21 @@
             <option value="wi">Wisconsin</option>
             <option value="wy">Wyoming</option>
           </select>
-          <button type="submit" id ='submit' class="btn">Search</button>
+          <button type="submit" class="btn">Search</button>
         </form>
         <button type="submit" class="btn btn-favorites"><a href="./favorite.html">Look up favorites</a></button>
       </div>
     </div>
-    <div >
-      <h2 class="subtitle">Showing available parks</h2>
-      <div id="park-container" class="list-group"></div>
+    <div class="col-12 col-md-8">
+      <h2 class="subtitle">Showing available parks <span id="repo-search-term"></span></h2>
+      <div id="repos-container" class="list-group">
+
+        <div class="card">
+          <h3 class="card-header text-uppercase">Hello</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur recusandae laudantium impedit nulla vitae ullam asperiores nisi sed totam debitis officiis error quasi, amet praesentium cum doloremque. Totam, alias sit!</p>
+          </div>
+
+      </div>
     </div>
   </main>
 
@@ -114,12 +121,13 @@
       </div>
     </div>
     <br>
-    <div class="flex justify-center m-0">
+    <div class="flex justify-center ">
       <p class="text-white">
         &copy; 2021 United States National Parks, .
     </p>
     </div>
   </footer>
+
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../assets/script.js"></script>
