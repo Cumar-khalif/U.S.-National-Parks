@@ -1,7 +1,16 @@
-$("#submit").on("click", function (event) {
-    event.preventDefault();
+function saveFavorites() {
+   
+    var parkCode = "voya";
+    var getApiPark = `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=bXu3Ai3Odu0e1HKfSDrMMWwCGmh9e2AEvwa80Dx6`;
 
-    var stateSel = $("#state").val()
+    fetch(getApiPark)
+        .then(response => response.json())
+        .then (data => {
+        console.log(data);
+        }
+)};
+saveFavorites()
 
-    document.location.replace(`./pages/search-results.html?state=${stateSel}`)
+$(document).on("click",".save", function(){
+    console.log("button clicked");
 })

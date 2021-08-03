@@ -42,7 +42,7 @@ function renderParkCard (parkData) {
     cardH3.text(parkData.fullName);
     
     //working on button
-    favbtn.addClass("btn");
+    favbtn.addClass("btn save");
     favbtn.text("Save");
     
     // adding description of park
