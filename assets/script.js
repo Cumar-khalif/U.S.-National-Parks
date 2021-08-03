@@ -26,7 +26,6 @@ function getParks (stateSel) {
 //adds parks to the page
 function renderParkCard (parkData) {
 
-
     const cardDiv = $('<div>');
     cardDiv.addClass('card');
 
@@ -80,7 +79,7 @@ function getCoordinates(stateSel) {
 
     fetch(getApiUrl)
         .then(response => response.json())
-        .then(data => {
+        .then (data => {
             console.log(data)
             data.data.forEach((element, i) => {
                 console.log(i);
@@ -95,5 +94,38 @@ function getWeather(lat, long) {
     console.log(getApiUrl)
     fetch(getApiUrl)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => {
+            console.log(data);
+
+            var temperature = data.main.temp;
+            var description = data.weather[0].description;
+
+            console.log(temperature);
+            console.log(description);
+
+    });
+}
+
+        // weather starts here.
+    function renderWeatherCard (temp, desc) {
+
+    const cardDiv = $('<div>');
+    cardDiv.addClass('card');
+    const cardH3 = $('<h3>');
+    cardH3.addClass("card-header text-uppercase");
+    cardH3.text(temp);
+    const cardP = $('<p>');
+    cardP.text(desc);
+    
+
+    //const cardImg = $('<img>');
+    //cardImg.attr('src', parkData.images[0].url);
+// Ends here
+  // weather append starts header
+  cardDiv.append(cardH3);
+  cardDiv.append(cardP);
+  //cardDiv.append(cardA);
+  //cardDiv.append(cardImg);
+  $('#repos-container').append(cardDiv);
+       // weather append Ends here
 }
