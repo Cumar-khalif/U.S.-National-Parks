@@ -1,5 +1,5 @@
-
-
+var weatherContainer = $(".weather")
+var cardContainer = $(".list-group")
 // get data for the selected state (stateSel)
 function getParks (stateSel) {
     
@@ -7,7 +7,7 @@ function getParks (stateSel) {
     fetch (getApiUrl)
     .then(response => response.json())
     .then (data => {
-        console.log(data)
+        //(data)
 
         // array of parks data
         const parks = data.data;
@@ -33,31 +33,41 @@ function renderParkCard (parkData) {
     const cardDiv = $('<div>');
     const cardA = $('<a>');
     const cardImg = $('<img>');
+    var br = $('<br>');
+
+
+    var cardWeather = $('<article>')
     // Working on div
-    cardDiv.addClass('card');
+    cardDiv.addClass('card flex flex-col');
 
     //working on header
     cardH3.addClass("card-header text-uppercase text-3xl");
     cardH3.text(parkData.fullName);
     
     //working on button
-    favbtn.addClass("btn");
+    favbtn.addClass("btn save");
     favbtn.text("Save");
-    
+    //weatherContainer
+    cardWeather.addClass('weather')
     // adding description of park
     cardP.text(parkData.description);
-    
-    //card
+    cardP.addClass('p-2')
+    // adding link
     cardA.attr('href', parkData.url )
     cardA.text('Learn More..')
-
+    // adding image
     cardImg.attr('src', parkData.images[0].url);
+    cardImg.addClass("img")
+    //appending all items
+    cardContainer.append(cardH3);
 
-    cardDiv.append(cardH3);
-    cardDiv.append(cardImg);
-    cardDiv.append(cardP);
-    cardDiv.append(cardA);
-    cardDiv.append(favbtn);
+    cardContainer.append(cardImg);
+    cardContainer.append(cardWeather)
+    cardContainer.append(cardP);
+    
+    cardContainer.append(favbtn);
+    cardP.append(br)
+    cardP.append(cardA)
     $('#park-container').append(cardDiv);
 
 }
@@ -80,25 +90,43 @@ function getCoordinates(stateSel) {
     
     var getApiUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${stateSel}&api_key=bXu3Ai3Odu0e1HKfSDrMMWwCGmh9e2AEvwa80Dx6`;
 
-    // console.log(getApiUrl)
-    console.log(stateSel);
 
     fetch(getApiUrl)
         .then(response => response.json())
-        .then(data => {
-            console.log(data)
+        .then (data => {
+            //(data)
             data.data.forEach((element, i) => {
-                console.log(i);
+                // //(i);
                 getWeather(element.latitude, element.longitude)
             });
         });
 }
 
 function getWeather(lat, long) {
-    console.log(long, lat)
+    //(long, lat)
     var getApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=5cd2b271a245b10cee40362f079a84fd`;
-    console.log(getApiUrl)
+    //(getApiUrl)
     fetch(getApiUrl)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => {
+            //(data);
+
+            var temperature = data.main.temp;
+            var description = data.weather[0].description;
+            renderWeatherCard(temperature,description)
+            //(temperature,description);
+
+    });
 }
+
+        // weather starts here.
+function renderWeatherCard (temp, desc) {
+    var divCard = $('<div>')
+    weatherContainer.append(temp)
+    weatherContainer.append(desc)
+
+}
+
+$(document).on("click",".save", function() {
+    console.log("clicked")
+})
