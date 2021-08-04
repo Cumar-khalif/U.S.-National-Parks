@@ -14,7 +14,6 @@ function getParks (stateSel) {
 
         // this where you do another fetch call to weather api
         
-        // render the park cards
         // loop through each park
         for (let i = 0; i < parks.length; i++) {
             // for each park, render a card
@@ -26,27 +25,30 @@ function getParks (stateSel) {
 
 //adds parks to the page
 function renderParkCard (parkData) {
-
-    const cardH3 = $('<h2>');
-    var favbtn = $('<button>');
+    const cardH2 = $('<h2>');
+    var favBtn = $('<button>');
     const cardP = $('<p>');
     const cardDiv = $('<div>');
     const cardA = $('<a>');
     const cardImg = $('<img>');
+    var code = parkData.parkCode;
     var br = $('<br>');
-
+    // console.log(code);    
+    // console.log(parkData)
 
     var cardWeather = $('<article>')
     // Working on div
     cardDiv.addClass('card flex flex-col');
 
     //working on header
-    cardH3.addClass("card-header text-uppercase text-3xl");
-    cardH3.text(parkData.fullName);
+    cardH2.addClass("card-header text-uppercase text-3xl");
+    cardH2.text(parkData.fullName);
     
     //working on button
-    favbtn.addClass("btn save");
-    favbtn.text("Save");
+    favBtn.addClass("btn save");
+    favBtn.text("Save");
+    favBtn.attr("id",code)
+
     //weatherContainer
     cardWeather.addClass('weather')
     // adding description of park
@@ -59,13 +61,13 @@ function renderParkCard (parkData) {
     cardImg.attr('src', parkData.images[0].url);
     cardImg.addClass("img")
     //appending all items
-    cardContainer.append(cardH3);
+    cardContainer.append(cardH2);
 
     cardContainer.append(cardImg);
     cardContainer.append(cardWeather)
     cardContainer.append(cardP);
     
-    cardContainer.append(favbtn);
+    cardContainer.append(favBtn);
     cardP.append(br)
     cardP.append(cardA)
     $('#park-container').append(cardDiv);
@@ -122,8 +124,18 @@ function getWeather(lat, long) {
         // weather starts here.
 function renderWeatherCard (temp, desc) {
     var divCard = $('<div>')
-    weatherContainer.append(temp)
-    weatherContainer.append(desc)
+    divCard.append(temp)
+    divCard.append(desc)
+    weatherContainer.append(divCard)
 
 }
 
+//saving park
+$(document).on("click",".save", function(){
+    var code = [];
+    var getId = $(this).attr('id');
+    code = JSON.parse(localStorage.getItem('FavPark')) || [];
+    code.push(getId);
+    localStorage.setItem("FavPark", JSON.stringify(code));
+    
+})
