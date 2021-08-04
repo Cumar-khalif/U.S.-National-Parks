@@ -105,12 +105,12 @@ function getCoordinates(stateSel) {
 
 function getWeather(lat, long) {
     //(long, lat)
-    var getApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=5cd2b271a245b10cee40362f079a84fd`;
+    var getApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=5cd2b271a245b10cee40362f079a84fd`;
     //(getApiUrl)
     fetch(getApiUrl)
         .then(response => response.json())
         .then(data => {
-            //(data);
+            console.log(data);
 
             var temperature = data.main.temp;
             var description = data.weather[0].description;
