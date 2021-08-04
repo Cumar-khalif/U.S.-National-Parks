@@ -121,6 +121,9 @@ font-size: 1.3rem;
   box-shadow: 2px 2px var(--dark);
 }
 
+.select{
+  background-color: var(--tertiary);
+}
 /* SEARCH */
 .search {
   margin: 0 0 20px 0;

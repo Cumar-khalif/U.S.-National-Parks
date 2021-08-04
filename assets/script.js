@@ -132,6 +132,7 @@ function renderWeatherCard (temp, desc) {
 
 //saving park
 $(document).on("click",".save", function(){
+    $(this).addClass('select')
     var code = [];
     var getId = $(this).attr('id');
     code = JSON.parse(localStorage.getItem('FavPark')) || [];
