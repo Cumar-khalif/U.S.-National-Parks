@@ -113,10 +113,10 @@ function getWeather(lat, long) {
         .then(data => {
             console.log(data);
 
+            
             var temperature = data.main.temp;
             var description = data.weather[0].description;
             renderWeatherCard(temperature,description)
-            //(temperature,description);
 
     });
 }
