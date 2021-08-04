@@ -1,5 +1,7 @@
-var weatherContainer = $(".weather")
 var cardContainer = $(".list-group")
+
+var weather = [];
+var park = [];
 // get data for the selected state (stateSel)
 function getParks (stateSel) {
     
@@ -18,6 +20,7 @@ function getParks (stateSel) {
         for (let i = 0; i < parks.length; i++) {
             // for each park, render a card
             renderParkCard(parks[i]);
+
         }
     
     });
@@ -25,6 +28,7 @@ function getParks (stateSel) {
 
 //adds parks to the page
 function renderParkCard (parkData) {
+    
     const cardH2 = $('<h2>');
     var favBtn = $('<button>');
     const cardP = $('<p>');
@@ -37,6 +41,10 @@ function renderParkCard (parkData) {
     // console.log(parkData)
 
     var cardWeather = $('<article>')
+
+    // Weather
+    cardWeather.attr('id', code)
+    cardWeather.addClass('h2')
     // Working on div
     cardDiv.addClass('card flex flex-col');
 
@@ -99,30 +107,35 @@ function getCoordinates(stateSel) {
             //(data)
             data.data.forEach((element, i) => {
                 // //(i);
-                getWeather(element.latitude, element.longitude)
+                getWeather(element.latitude, element.longitude,element.parkCode)
+                console.log(element)
             });
         });
 }
 
-function getWeather(lat, long) {
+function getWeather(lat, long,parksCode) {
     //(long, lat)
     var getApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=5cd2b271a245b10cee40362f079a84fd`;
     //(getApiUrl)
+
+    // console.log(parksCode)
     fetch(getApiUrl)
         .then(response => response.json())
         .then(data => {
             console.log(data);
 
-            
             var temperature = data.main.temp;
             var description = data.weather[0].description;
-            renderWeatherCard(temperature,description)
+            renderWeatherCard(temperature,description,parksCode)
+            //(temperature,description);
 
     });
 }
 
         // weather starts here.
-function renderWeatherCard (temp, desc) {
+function renderWeatherCard (temp, desc,parksCode) {
+    console.log(parksCode)
+    var weatherContainer = $("#" + parksCode)
     var divCard = $('<div>')
     divCard.append(temp)
     divCard.append(desc)
@@ -134,7 +147,6 @@ function renderWeatherCard (temp, desc) {
 $(document).on("click",".save", function(){
     var code = [];
     var getId = $(this).attr('id');
-    $(this).addClass('select')
     code = JSON.parse(localStorage.getItem('FavPark')) || [];
     code.push(getId);
     localStorage.setItem("FavPark", JSON.stringify(code));
