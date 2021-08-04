@@ -73,18 +73,4 @@ function renderParkCard (parkData) {
     $('#park-container').append(cardDiv);
 
 }
-// $(document).on("click",".save", function(){
-//     var favPark = [];
-//     console.log(favPark);
-//     $('#park-container')
-//         .find(this, "h2")
-//         .each(function() {
-//             var $li = $(this);
-//             favPark.push($li.text());
-//         });
-//         favorites = JSON.parse(localStorage.getItem("favP")) || [];
-//         favorites.push(favPark);
-//         localStorage.setItem("favP", JSON.stringify(favorites));
-    
-// })
 getStorage()
