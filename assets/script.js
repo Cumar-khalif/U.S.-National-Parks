@@ -1,4 +1,3 @@
-var weatherContainer = $(".weather")
 var cardContainer = $(".list-group")
 // get data for the selected state (stateSel)
 function getParks (stateSel) {
@@ -123,6 +122,7 @@ function getWeather(lat, long) {
 
         // weather starts here.
 function renderWeatherCard (temp, desc) {
+    var weatherContainer = $(".weather")
     var divCard = $('<div>')
     divCard.append(temp)
     divCard.append(desc)

@@ -33,10 +33,12 @@ footer {
 * {
   box-sizing: border-box;
 }
-
-a {
+/* added the hover focus */
+a:focus, a:hover{
   color:blue;
 }
+
+
 
 .btn a{
   color: var(--primary)
