@@ -42,7 +42,9 @@ a {
   color: var(--primary)
 
 }
-
+.btn-back a{
+  color: var(--primary)
+}
 footer a {
   color: var(--primary)
 
