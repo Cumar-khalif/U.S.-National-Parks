@@ -7,3 +7,4 @@ Project Contributors: David T, Omar A,Phillip Y., Jose A.
 Deployed Link: https://cumar-khalif.github.io/U.S.-National-Parks/
 Repository Link: https://github.com/Cumar-khalif/U.S.-National-Parks
 
+![homepage](./assets/img/homePage.png)
