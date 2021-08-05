@@ -44,7 +44,7 @@ function renderParkCard (parkData) {
 
     // Weather
     cardWeather.attr('id', code)
-    cardWeather.addClass('h2')
+    cardWeather.addClass('flex justify-right card-header')
     // Working on div
     cardDiv.addClass('card flex flex-col');
 
@@ -137,7 +137,9 @@ function renderWeatherCard (temp, desc,parksCode) {
     console.log(parksCode)
     var weatherContainer = $("#" + parksCode)
     var divCard = $('<div>')
+    var br = $('<br>')
     divCard.append(temp)
+    divCard.append(br)
     divCard.append(desc)
     weatherContainer.append(divCard)
 
