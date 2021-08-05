@@ -1,7 +1,6 @@
 var cardContainer = $(".list-group")
 
-var weather = [];
-var park = [];
+
 // get data for the selected state (stateSel)
 function getParks (stateSel) {
     
@@ -149,6 +148,7 @@ function renderWeatherCard (temp, desc,parksCode) {
 $(document).on("click",".save", function(){
     var code = [];
     var getId = $(this).attr('id');
+    $(this).addClass("select")
     code = JSON.parse(localStorage.getItem('FavPark')) || [];
     code.push(getId);
     localStorage.setItem("FavPark", JSON.stringify(code));
